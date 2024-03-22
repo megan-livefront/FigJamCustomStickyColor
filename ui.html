@@ -8,6 +8,29 @@
   <form>
     <label for="color">Custom color:</label>
     <input id="color" type="string" value="" autofocus>
+    <fieldset class="colorOptionsWrapper">
+      <input id="#E4CCFF" onchange="onChange(event)" type="radio" name="color" style="background: #E4CCFF;" checked />
+      <input id="#FFC470" onchange="onChange(event)" type="radio" name="color" style="background: #FFC470;" />
+      <input id="#FFD966" onchange="onChange(event)" type="radio" name="color" style="background: #FFD966;" />
+      <input id="#85E0A3" onchange="onChange(event)" type="radio" name="color" style="background: #85E0A3;" />
+      <input id="#80CAFF" onchange="onChange(event)" type="radio" name="color" style="background: #80CAFF;" />
+      <input id="#D9B8FF" onchange="onChange(event)" type="radio" name="color" style="background: #D9B8FF;" />
+      <input id="#FFBDF2" onchange="onChange(event)" type="radio" name="color" style="background: #FFBDF2;" />
+      <input id="#FFAFA3" onchange="onChange(event)" type="radio" name="color" style="background: #FFAFA3;" />
+      <input id="#E6E6E6" onchange="onChange(event)" type="radio" name="color" style="background: #E6E6E6;" />
+      <input id="#AFBCCF" onchange="onChange(event)" type="radio" name="color" style="background: #AFBCCF;" />
+      <input id="#70E9C9" onchange="onChange(event)" type="radio" name="color" style="background: #70E9C9;" />
+      <input id="#70CDE9" onchange="onChange(event)" type="radio" name="color" style="background: #70CDE9;" />
+      <input id="#C970E9" onchange="onChange(event)" type="radio" name="color" style="background: #C970E9;" />
+      <input id="#E970CD" onchange="onChange(event)" type="radio" name="color" style="background: #E970CD;" />
+      <input id="#FF8469" onchange="onChange(event)" type="radio" name="color" style="background: #FF8469;" />
+      <input id="#B8B8B8" onchange="onChange(event)" type="radio" name="color" style="background: #B8B8B8;" />
+      <input id="#E2F2AC" onchange="onChange(event)" type="radio" name="color" style="background: #E2F2AC;" />
+      <input id="#7090E9" onchange="onChange(event)" type="radio" name="color" style="background: #7090E9;" />
+      <input id="#FF95B2" onchange="onChange(event)" type="radio" name="color" style="background: #FF95B2;" />
+      <input id="#FFFFFF" onchange="onChange(event)" type="radio" name="color" style="background: #FFFFFF;" />
+      <input id="#CDE970" onchange="onChange(event)" type="radio" name="color" style="background: #CDE970;" />
+    </fieldset>
     <div class="buttonWrapper">
       <button id="changeColor" type="submit">change color</button>
       <button id="cancel" type="button">cancel</button>
@@ -20,8 +43,19 @@
     var input = document.getElementById("color").focus();
   }
 
+  const stickyColor = {
+    color: '#E4CCFF'
+  };
+
+  function onChange(e) {
+    stickyColor.color = e.target.id
+    const btn = document.getElementById(e.target.id)
+    btn.checked = true
+  }
+
   document.getElementById('changeColor').onclick = () => {
-    const color = document.getElementById('color').value
+    // const color = document.getElementById('color').value
+    const color = stickyColor.color
     parent.postMessage({ pluginMessage: { type: 'change-color', color } }, '*')
   }
 
@@ -56,6 +90,38 @@
     padding: 8px;
     border-radius: 8px;
     width: 80%;
+  }
+
+  .colorOptionsWrapper {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 6px;
+    justify-content: center;
+    border: none;
+    background: none;
+    margin: 0;
+    padding: 0;
+  }
+
+  input[type="radio"] {
+    appearance: none;
+    background-color: #fff;
+    margin: 0;
+    font: inherit;
+    color: red;
+    width: 40px;
+    height: 40px;
+    border: 1px solid lightgray;
+    border-radius: 50%;
+    cursor: pointer;
+  }
+
+  input[type="radio"]:checked {
+    border: 2px solid gray;
+  }
+
+  input[type="radio"]:hover {
+    border: 1px solid gray;
   }
 
   .buttonWrapper {
