@@ -4,65 +4,49 @@
   href="https://fonts.googleapis.com/css2?family=Asap+Condensed:ital,wght@0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap"
   rel="stylesheet">
 <div class="wrapper">
-  <h2 class="heading">Custom Sticky Color</h2>
   <form>
-    <label for="color">Custom color:</label>
-    <input id="color" type="string" value="" autofocus>
     <fieldset class="colorOptionsWrapper">
-      <input id="#E4CCFF" onchange="onChange(event)" type="radio" name="color" style="background: #E4CCFF;" checked />
-      <input id="#FFC470" onchange="onChange(event)" type="radio" name="color" style="background: #FFC470;" />
-      <input id="#FFD966" onchange="onChange(event)" type="radio" name="color" style="background: #FFD966;" />
-      <input id="#85E0A3" onchange="onChange(event)" type="radio" name="color" style="background: #85E0A3;" />
-      <input id="#80CAFF" onchange="onChange(event)" type="radio" name="color" style="background: #80CAFF;" />
-      <input id="#D9B8FF" onchange="onChange(event)" type="radio" name="color" style="background: #D9B8FF;" />
-      <input id="#FFBDF2" onchange="onChange(event)" type="radio" name="color" style="background: #FFBDF2;" />
-      <input id="#FFAFA3" onchange="onChange(event)" type="radio" name="color" style="background: #FFAFA3;" />
-      <input id="#E6E6E6" onchange="onChange(event)" type="radio" name="color" style="background: #E6E6E6;" />
-      <input id="#AFBCCF" onchange="onChange(event)" type="radio" name="color" style="background: #AFBCCF;" />
-      <input id="#70E9C9" onchange="onChange(event)" type="radio" name="color" style="background: #70E9C9;" />
-      <input id="#70CDE9" onchange="onChange(event)" type="radio" name="color" style="background: #70CDE9;" />
-      <input id="#C970E9" onchange="onChange(event)" type="radio" name="color" style="background: #C970E9;" />
-      <input id="#E970CD" onchange="onChange(event)" type="radio" name="color" style="background: #E970CD;" />
-      <input id="#FF8469" onchange="onChange(event)" type="radio" name="color" style="background: #FF8469;" />
-      <input id="#B8B8B8" onchange="onChange(event)" type="radio" name="color" style="background: #B8B8B8;" />
-      <input id="#E2F2AC" onchange="onChange(event)" type="radio" name="color" style="background: #E2F2AC;" />
-      <input id="#7090E9" onchange="onChange(event)" type="radio" name="color" style="background: #7090E9;" />
-      <input id="#FF95B2" onchange="onChange(event)" type="radio" name="color" style="background: #FF95B2;" />
-      <input id="#FFFFFF" onchange="onChange(event)" type="radio" name="color" style="background: #FFFFFF;" />
-      <input id="#CDE970" onchange="onChange(event)" type="radio" name="color" style="background: #CDE970;" />
+      <input id="#E4CCFF" onchange="onRadioColorChange(event)" type="radio" name="color" style="background: #E4CCFF;" />
+      <input id="#FFC470" onchange="onRadioColorChange(event)" type="radio" name="color" style="background: #FFC470;" />
+      <input id="#FFD966" onchange="onRadioColorChange(event)" type="radio" name="color" style="background: #FFD966;" />
+      <input id="#85E0A3" onchange="onRadioColorChange(event)" type="radio" name="color" style="background: #85E0A3;" />
+      <input id="#80CAFF" onchange="onRadioColorChange(event)" type="radio" name="color" style="background: #80CAFF;" />
+      <input id="#D9B8FF" onchange="onRadioColorChange(event)" type="radio" name="color" style="background: #D9B8FF;" />
+      <input id="#FFBDF2" onchange="onRadioColorChange(event)" type="radio" name="color" style="background: #FFBDF2;" />
+      <input id="#FFAFA3" onchange="onRadioColorChange(event)" type="radio" name="color" style="background: #FFAFA3;" />
+      <input id="#E6E6E6" onchange="onRadioColorChange(event)" type="radio" name="color" style="background: #E6E6E6;" />
+      <input id="#AFBCCF" onchange="onRadioColorChange(event)" type="radio" name="color" style="background: #AFBCCF;" />
+      <input id="#70E9C9" onchange="onRadioColorChange(event)" type="radio" name="color" style="background: #70E9C9;" />
+      <input id="#70CDE9" onchange="onRadioColorChange(event)" type="radio" name="color" style="background: #70CDE9;" />
+      <input id="#C970E9" onchange="onRadioColorChange(event)" type="radio" name="color" style="background: #C970E9;" />
+      <input id="#E970CD" onchange="onRadioColorChange(event)" type="radio" name="color" style="background: #E970CD;" />
+      <input id="#FF8469" onchange="onRadioColorChange(event)" type="radio" name="color" style="background: #FF8469;" />
+      <input id="#B8B8B8" onchange="onRadioColorChange(event)" type="radio" name="color" style="background: #B8B8B8;" />
+      <input id="#E2F2AC" onchange="onRadioColorChange(event)" type="radio" name="color" style="background: #E2F2AC;" />
+      <input id="#7090E9" onchange="onRadioColorChange(event)" type="radio" name="color" style="background: #7090E9;" />
+      <input id="#FF95B2" onchange="onRadioColorChange(event)" type="radio" name="color" style="background: #FF95B2;" />
+      <input id="#FFFFFF" onchange="onRadioColorChange(event)" type="radio" name="color" style="background: #FFFFFF;" />
+      <input id="#CDE970" onchange="onRadioColorChange(event)" type="radio" name="color" style="background: #CDE970;" />
+      <div class="colorPickerWrapper">
+        <input onchange="onColorPickerChange(event)" type="color" value="#3f4ade" id="colorPicker" />
+        <label for="colorPicker">Choose from color picker</label>
+      </div>
     </fieldset>
-    <div class="buttonWrapper">
-      <button id="changeColor" type="submit">change color</button>
-      <button id="cancel" type="button">cancel</button>
-    </div>
   </form>
 </div>
 
 <script>
-  window.onload = function () {
-    var input = document.getElementById("color").focus();
-  }
-
-  const stickyColor = {
-    color: '#E4CCFF'
-  };
-
-  function onChange(e) {
-    stickyColor.color = e.target.id
-    const btn = document.getElementById(e.target.id)
-    btn.checked = true
-  }
-
-  document.getElementById('changeColor').onclick = () => {
-    // const color = document.getElementById('color').value
-    const color = stickyColor.color
+  function changeStickyColor(color) {
     parent.postMessage({ pluginMessage: { type: 'change-color', color } }, '*')
   }
 
-  document.getElementById('cancel').onclick = () => {
-    parent.postMessage({ pluginMessage: { type: 'cancel' } }, '*')
+  function onColorPickerChange(e) {
+    changeStickyColor(e.target.value)
   }
 
+  function onRadioColorChange(e) {
+    changeStickyColor(e.target.id)
+  }
 </script>
 
 <style>
@@ -70,12 +54,10 @@
     font-family: "Asap Condensed", sans-serif;
     font-weight: 400;
     font-style: normal;
-  }
-
-  .heading {
-    font-weight: 600;
-    font-style: normal;
-    text-align: center;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100%;
   }
 
   form {
@@ -83,13 +65,7 @@
     flex-direction: column;
     align-items: center;
     gap: 12px;
-    width: 100%;
-  }
-
-  input {
-    padding: 8px;
-    border-radius: 8px;
-    width: 80%;
+    padding: 0 30px;
   }
 
   .colorOptionsWrapper {
@@ -101,6 +77,17 @@
     background: none;
     margin: 0;
     padding: 0;
+  }
+
+  label {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    margin: -1px;
+    padding: 0;
+    overflow: hidden;
+    border: 0;
+    clip: rect(0, 0, 0, 0);
   }
 
   input[type="radio"] {
@@ -116,32 +103,42 @@
     cursor: pointer;
   }
 
-  input[type="radio"]:checked {
-    border: 2px solid gray;
-  }
-
   input[type="radio"]:hover {
     border: 1px solid gray;
   }
 
-  .buttonWrapper {
-    display: flex;
-    gap: 8px;
+  .colorPickerWrapper {
+    background: linear-gradient(90deg,
+        rgba(255, 0, 0, 1) 0%,
+        rgba(255, 154, 0, 1) 10%,
+        rgba(208, 222, 33, 1) 20%,
+        rgba(79, 220, 74, 1) 30%,
+        rgba(63, 218, 216, 1) 40%,
+        rgba(47, 201, 226, 1) 50%,
+        rgba(28, 127, 238, 1) 60%,
+        rgba(95, 21, 242, 1) 70%,
+        rgba(186, 12, 248, 1) 80%,
+        rgba(251, 7, 217, 1) 90%,
+        rgba(255, 0, 0, 1) 100%);
+    border-radius: 50%;
+    border: 1px solid transparent;
   }
 
-  button {
-    font-family: "Asap Condensed", sans-serif;
-    font-style: normal;
-    font-weight: 600;
-    padding: 12px;
-    border-radius: 24px;
-    color: #ffffff;
-    background-color: #002677;
+  .colorPickerWrapper:hover {
+    border: 1px solid gray;
+  }
+
+  input[type="color"] {
+    appearance: none;
+    background-color: transparent;
+    width: 40px;
+    height: 40px;
     border: none;
     cursor: pointer;
   }
 
-  button:hover {
-    background-color: #0342C9;
+  input[type="color"]::-webkit-color-swatch {
+    border-radius: 50%;
+    border: 1px solid transparent;
   }
 </style>

@@ -1,5 +1,5 @@
 figma.showUI(__html__);
-figma.ui.resize(400, 350);
+figma.ui.resize(400, 280);
 
 type Fills = typeof figma.mixed | readonly Paint[];
 
