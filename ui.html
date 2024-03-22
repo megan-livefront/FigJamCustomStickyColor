@@ -1,39 +1,30 @@
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link
-  href="https://fonts.googleapis.com/css2?family=Asap+Condensed:ital,wght@0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap"
-  rel="stylesheet">
-<div class="wrapper">
-  <form>
-    <fieldset class="colorOptionsWrapper">
-      <input id="#E4CCFF" onchange="onRadioColorChange(event)" type="radio" name="color" style="background: #E4CCFF;" />
-      <input id="#FFC470" onchange="onRadioColorChange(event)" type="radio" name="color" style="background: #FFC470;" />
-      <input id="#FFD966" onchange="onRadioColorChange(event)" type="radio" name="color" style="background: #FFD966;" />
-      <input id="#85E0A3" onchange="onRadioColorChange(event)" type="radio" name="color" style="background: #85E0A3;" />
-      <input id="#80CAFF" onchange="onRadioColorChange(event)" type="radio" name="color" style="background: #80CAFF;" />
-      <input id="#D9B8FF" onchange="onRadioColorChange(event)" type="radio" name="color" style="background: #D9B8FF;" />
-      <input id="#FFBDF2" onchange="onRadioColorChange(event)" type="radio" name="color" style="background: #FFBDF2;" />
-      <input id="#FFAFA3" onchange="onRadioColorChange(event)" type="radio" name="color" style="background: #FFAFA3;" />
-      <input id="#E6E6E6" onchange="onRadioColorChange(event)" type="radio" name="color" style="background: #E6E6E6;" />
-      <input id="#AFBCCF" onchange="onRadioColorChange(event)" type="radio" name="color" style="background: #AFBCCF;" />
-      <input id="#70E9C9" onchange="onRadioColorChange(event)" type="radio" name="color" style="background: #70E9C9;" />
-      <input id="#70CDE9" onchange="onRadioColorChange(event)" type="radio" name="color" style="background: #70CDE9;" />
-      <input id="#C970E9" onchange="onRadioColorChange(event)" type="radio" name="color" style="background: #C970E9;" />
-      <input id="#E970CD" onchange="onRadioColorChange(event)" type="radio" name="color" style="background: #E970CD;" />
-      <input id="#FF8469" onchange="onRadioColorChange(event)" type="radio" name="color" style="background: #FF8469;" />
-      <input id="#B8B8B8" onchange="onRadioColorChange(event)" type="radio" name="color" style="background: #B8B8B8;" />
-      <input id="#E2F2AC" onchange="onRadioColorChange(event)" type="radio" name="color" style="background: #E2F2AC;" />
-      <input id="#7090E9" onchange="onRadioColorChange(event)" type="radio" name="color" style="background: #7090E9;" />
-      <input id="#FF95B2" onchange="onRadioColorChange(event)" type="radio" name="color" style="background: #FF95B2;" />
-      <input id="#FFFFFF" onchange="onRadioColorChange(event)" type="radio" name="color" style="background: #FFFFFF;" />
-      <input id="#CDE970" onchange="onRadioColorChange(event)" type="radio" name="color" style="background: #CDE970;" />
-      <div class="colorPickerWrapper">
-        <input onchange="onColorPickerChange(event)" type="color" value="#3f4ade" id="colorPicker" />
-        <label for="colorPicker">Choose from color picker</label>
-      </div>
-    </fieldset>
-  </form>
-</div>
+<form class="colorOptionsWrapper">
+  <button id="#E4CCFF" onclick="onColorButtonChange(event)" style="background: #E4CCFF;"></button>
+  <button id="#FFC470" onclick="onColorButtonChange(event)" style="background: #FFC470;"></button>
+  <button id="#FFD966" onclick="onColorButtonChange(event)" style="background: #FFD966;"></button>
+  <button id="#85E0A3" onclick="onColorButtonChange(event)" style="background: #85E0A3;"></button>
+  <button id="#80CAFF" onclick="onColorButtonChange(event)" style="background: #80CAFF;"></button>
+  <button id="#D9B8FF" onclick="onColorButtonChange(event)" style="background: #D9B8FF;"></button>
+  <button id="#FFBDF2" onclick="onColorButtonChange(event)" style="background: #FFBDF2;"></button>
+  <button id="#FFAFA3" onclick="onColorButtonChange(event)" style="background: #FFAFA3;"></button>
+  <button id="#E6E6E6" onclick="onColorButtonChange(event)" style="background: #E6E6E6;"></button>
+  <button id="#AFBCCF" onclick="onColorButtonChange(event)" style="background: #AFBCCF;"></button>
+  <button id="#70E9C9" onclick="onColorButtonChange(event)" style="background: #70E9C9;"></button>
+  <button id="#70CDE9" onclick="onColorButtonChange(event)" style="background: #70CDE9;"></button>
+  <button id="#C970E9" onclick="onColorButtonChange(event)" style="background: #C970E9;"></button>
+  <button id="#E970CD" onclick="onColorButtonChange(event)" style="background: #E970CD;"></button>
+  <button id="#FF8469" onclick="onColorButtonChange(event)" style="background: #FF8469;"></button>
+  <button id="#B8B8B8" onclick="onColorButtonChange(event)" style="background: #B8B8B8;"></button>
+  <button id="#E2F2AC" onclick="onColorButtonChange(event)" style="background: #E2F2AC;"></button>
+  <button id="#7090E9" onclick="onColorButtonChange(event)" style="background: #7090E9;"></button>
+  <button id="#FF95B2" onclick="onColorButtonChange(event)" style="background: #FF95B2;"></button>
+  <button id="#FFFFFF" onclick="onColorButtonChange(event)" style="background: #FFFFFF;"></button>
+  <button id="#CDE970" onclick="onColorButtonChange(event)" style="background: #CDE970;"></button>
+  <div class="colorPickerWrapper">
+    <input onchange="onColorPickerChange(event)" type="color" value="#3f4ade" id="colorPicker" />
+    <label for="colorPicker">Choose from color picker</label>
+  </div>
+</form>
 
 <script>
   function changeStickyColor(color) {
@@ -44,39 +35,36 @@
     changeStickyColor(e.target.value)
   }
 
-  function onRadioColorChange(e) {
+  function onColorButtonChange(e) {
     changeStickyColor(e.target.id)
   }
 </script>
 
 <style>
-  .wrapper {
-    font-family: "Asap Condensed", sans-serif;
-    font-weight: 400;
-    font-style: normal;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    height: 100%;
-  }
-
-  form {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    gap: 12px;
-    padding: 0 30px;
-  }
-
   .colorOptionsWrapper {
     display: flex;
     flex-wrap: wrap;
-    gap: 6px;
     justify-content: center;
+    align-items: center;
+    gap: 6px;
     border: none;
     background: none;
     margin: 0;
-    padding: 0;
+    padding: 30px;
+  }
+
+  .colorOptionsWrapper button {
+    appearance: none;
+    margin: 0;
+    width: 40px;
+    height: 40px;
+    border: 1px solid lightgray;
+    border-radius: 50%;
+    cursor: pointer;
+  }
+
+  .colorOptionsWrapper button:hover {
+    border: 1px solid gray;
   }
 
   label {
@@ -88,23 +76,6 @@
     overflow: hidden;
     border: 0;
     clip: rect(0, 0, 0, 0);
-  }
-
-  input[type="radio"] {
-    appearance: none;
-    background-color: #fff;
-    margin: 0;
-    font: inherit;
-    color: red;
-    width: 40px;
-    height: 40px;
-    border: 1px solid lightgray;
-    border-radius: 50%;
-    cursor: pointer;
-  }
-
-  input[type="radio"]:hover {
-    border: 1px solid gray;
   }
 
   .colorPickerWrapper {
